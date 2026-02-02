@@ -1,0 +1,158 @@
+$main-color: #222;
+$bg-gray: #f5f5f5;
+
+body{
+    font-family: "Noto Sans JP, sans-serif";
+    line-height: 1.7;
+    color: #333;
+}
+
+section{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+section:nth-of-type(even) {
+  background-color: #f7f7f7;
+}
+
+
+h2{
+    margin-bottom: 24px;
+    font-size: 28px;
+    letter-spacing: 0.05em;
+}
+
+// ボタン
+.btn{
+    display: inline-block;
+    padding: 14px 40px;
+    background: $main-color;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: transform 0.3s, opacity 0.3s;
+
+    &:hover{
+        transform: translateY(-2px);
+        opacity: 0.9;
+    }
+    
+}
+
+//FV
+.fv{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: {
+        image: url("images/fv.jpg");
+        size: cover;
+        position: center;
+    }
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(255, 255, 255, 0.6); // 霧の濃さ
+        z-index: 1;
+    }
+
+    &-inner{
+        position: relative;
+        z-index: 2;
+        text-align: center;
+    }
+
+    &-title{
+        font-size: clamp(28px, 4vw, 48px);
+        line-height: 1.4;
+        text-align: center;
+
+        span{
+            display: inline;
+        }
+        @media(max-width: 768px){
+            .break{
+                display: block;
+            }
+        }
+    }
+
+    &-lead{
+        margin: 24px 0;
+    }
+}
+
+.about-inner{
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    @media(max-width: 768px){
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
+.about-text{
+    flex: 0 0 40%;
+    max-width: 420px;
+
+    h2{
+        margin-top: 16px;
+        line-height: 1.4
+    }
+    p{
+        line-height: 1.8;
+    }
+    @media(max-width: 768px){
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+.about-image {
+  flex: 0 0 60%;
+  max-width: 600px;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+}
+
+
+.features ul, .plans ul{
+    list-style: none;
+    padding: 0;
+}
+
+.features li, .plans li{
+    margin-bottom: 12px;
+}
+
+.contact{
+    background-color: $bg-gray;
+    text-align: center;
+    .btn{
+        margin-top: 24px;
+        font-size: 16px;
+    }
+}
+
+footer{
+    text-align: center;
+}
